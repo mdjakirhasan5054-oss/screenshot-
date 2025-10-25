@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Screenshot Reward</title>
+</head>
+<body>
+  <h2>📸 Screenshot Reward</h2>
+  <div>
+    <input type="text" id="username" placeholder="আপনার নাম লিখুন" />
+    <button onclick="registerUser()">Start Game</button>
+  </div>
+  <div>
+    <input type="file" id="file" accept="image/*" />
+    <button onclick="upload()">Upload Screenshot</button>
+  </div>
+  <div>
+    <h4>💰 ব্যালেন্স: <span id="balance">0</span> টাকা</h4>
+    <button onclick="withdraw()">Withdraw</button>
+    <p id="status"></p>
+  </div>
+
+  <script>
+    let username = localStorage.getItem('username');
+    if(username){ document.getElementById('username').value=username; }
+
+    async function registerUser(){
+      const name = document.getElementById('username').value.trim();
+      if(!name) return alert('নাম লিখুন!');
+      localStorage.setItem('username', name);
+      alert('রেজিস্ট্রেশন সম্পন্ন হয়েছে!');
+    }
+
+    async function upload(){
+      alert('স্ক্রিনশট আপলোড করা হয়েছে (Demo)');
+    }
+
+    async function withdraw(){
+      alert('উইথড্র রিকোয়েস্ট পাঠানো হয়েছে (Demo)');
+    }
+  </script>
+</body>
+</html>
